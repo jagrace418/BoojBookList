@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int                             $id
  * @property string                          $title
  * @property string                          $author
- * @property int                             $rating
+ * @property int                             $ranking
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Book newModelQuery()
@@ -29,5 +29,12 @@ class Book extends Model {
 
 	public function path () {
 		return "/books/{$this->id}";
+	}
+
+	public function __construct (array $attributes = []) {
+		parent::__construct($attributes);
+		if ($this->ranking === null) {
+			$this->ranking = Book::count() + 1;
+		}
 	}
 }

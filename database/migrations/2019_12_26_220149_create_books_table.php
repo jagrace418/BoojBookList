@@ -15,6 +15,7 @@ class CreateBooksTable extends Migration {
 			$table->bigIncrements('id');
 			$table->string('title');
 			$table->string('author');
+			$table->integer('ranking')->nullable(true);
 			$table->timestamps();
 		});
 	}

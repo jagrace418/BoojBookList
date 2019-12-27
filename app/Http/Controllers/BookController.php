@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Book;
-use Illuminate\Http\Request;
 
 class BookController extends Controller {
 
@@ -16,6 +15,7 @@ class BookController extends Controller {
 	public function sort ($column, $order = null) {
 		$books = Book::all();
 		$sortCols = [
+			'ranking',
 			'title',
 			'author',
 		];
@@ -36,12 +36,7 @@ class BookController extends Controller {
 	}
 
 	public function store () {
-		$attributes = request()->validate([
-			'title'  => 'required',
-			'author' => 'required',
-		]);
-
-		Book::create($attributes);
+		Book::create($this->validateRequest());
 
 		return redirect('/books');
 	}
@@ -61,16 +56,20 @@ class BookController extends Controller {
 	}
 
 	public function update (Book $book) {
-		$attributes = request()->validate([
-			'title'  => 'required',
-			'author' => 'required',
-		]);
-		$book->update($attributes);
+		$book->update($this->validateRequest());
 
 		return redirect($book->path());
 	}
 
 	public function edit (Book $book) {
 		return view('books.edit', compact('book'));
+	}
+
+	protected function validateRequest () {
+		return request()->validate([
+			'title'   => 'required|max:255',
+			'author'  => 'required|max:255',
+			'ranking' => 'nullable'
+		]);
 	}
 }

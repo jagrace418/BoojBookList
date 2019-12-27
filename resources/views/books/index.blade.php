@@ -8,6 +8,24 @@
 		<thead>
 		<tr>
 			<th class="text-xl text-left">
+				@if(Route::current()->parameter('column') === 'ranking' && Route::current()->parameter('order') === 'desc')
+					<i class="fas fa-arrow-up"></i>
+				@elseif(Route::current()->parameter('column') === 'ranking')
+					<i class="fas fa-arrow-down"></i>
+				@endif
+				<a
+						@if(Route::current()->parameter('order') === null)
+						href="/books/sort/ranking/desc"
+						@elseif(Route::current()->parameter('order') === 'asc')
+						href="/books/sort/ranking/desc"
+						@else
+						href="/books/sort/ranking/asc"
+						@endif
+				>
+					Ranking
+			</th>
+
+			<th class="text-xl text-left">
 				@if(Route::current()->parameter('column') === 'title' && Route::current()->parameter('order') === 'desc')
 					<i class="fas fa-arrow-up"></i>
 				@elseif(Route::current()->parameter('column') === 'title')
@@ -49,6 +67,9 @@
 		<?php $i = 0; ?>
 		@forelse($books as $book)
 			<tr>
+				<td class="<?= $i % 2 == 0 ? 'bg-gray-300' : 'bg-white'?>">
+					{{$book->ranking}}
+				</td>
 				<td class="<?= $i % 2 == 0 ? 'bg-gray-300' : 'bg-white'?>">
 					<a href="{{$book->path()}}">{{$book->title}}</a>
 				</td>

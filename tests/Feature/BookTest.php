@@ -18,8 +18,9 @@ class BookTest extends TestCase {
 			->assertStatus(200);
 
 		$attributes = [
-			'title'  => $this->faker->title,
-			'author' => $this->faker->name,
+			'title'   => $this->faker->title,
+			'author'  => $this->faker->name,
+			'ranking' => 5,
 		];
 
 		$this->post('/books', $attributes)
@@ -47,8 +48,9 @@ class BookTest extends TestCase {
 		$book = factory('App\Book')->create();
 
 		$this->patch($book->path(), $attributes = [
-			'author' => 'Jake Grace',
-			'title'  => 'My Incredible Story'])
+			'author'  => 'Jake Grace',
+			'ranking' => 5,
+			'title'   => 'My Incredible Story'])
 			->assertRedirect($book->path());
 
 		$this->get($book->path() . '/edit')->assertStatus(200);
@@ -65,6 +67,12 @@ class BookTest extends TestCase {
 		$attributes = factory('App\Book')->raw(['author' => '']);
 		$this->post('/books', $attributes)
 			->assertSessionHasErrors('author');
+	}
+
+	public function testBookNotRequiresRating () {
+		$attributes = factory('App\Book')->raw(['ranking' => '']);
+		$this->post('/books', $attributes)
+			->assertSessionHasNoErrors();
 	}
 
 	public function testViewBook () {
