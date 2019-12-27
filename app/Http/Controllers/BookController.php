@@ -17,7 +17,6 @@ class BookController extends Controller {
 		$attributes = request()->validate([
 			'title'  => 'required',
 			'author' => 'required',
-			'rating' => 'nullable'
 		]);
 
 		Book::create($attributes);
@@ -31,5 +30,25 @@ class BookController extends Controller {
 
 	public function create () {
 		return view('books.create');
+	}
+
+	public function destroy (Book $book) {
+		$book->delete();
+
+		return redirect('/books');
+	}
+
+	public function update (Book $book) {
+		$attributes = request()->validate([
+			'title'  => 'required',
+			'author' => 'required',
+		]);
+		$book->update($attributes);
+
+		return redirect($book->path());
+	}
+
+	public function edit (Book $book) {
+		return view('books.edit', compact('book'));
 	}
 }

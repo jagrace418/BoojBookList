@@ -15,10 +15,6 @@ Route::get('/', function () {
 	return view('welcome');
 });
 
-Route::post('/books', 'BookController@store');
+Route::resource('books', 'BookController');
 
-Route::get('/books', 'BookController@index');
-
-Route::get('/books/create', 'BookController@create');
-
-Route::get('/books/{book}', 'BookController@show');
+Route::get('/books/{book}/edit', 'BookController@edit');

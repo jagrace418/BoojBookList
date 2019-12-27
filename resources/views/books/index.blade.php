@@ -1,13 +1,26 @@
 @extends('layouts.app')
 @section('content')
 	<a href="/books/create">Add to List</a>
-	<ul>
+	<table>
+		<thead>
+		<tr>
+			<th>Title</th>
+			<th>Author</th>
+		</tr>
+		</thead>
+		<tbody>
 		@forelse($books as $book)
-			<li>
-				<a href="{{$book->path()}}">{{$book->title}}</a>
-			</li>
+			<tr>
+				<td>
+					<a href="{{$book->path()}}">{{$book->title}}</a>
+				</td>
+				<td>{{$book->author}}</td>
+			</tr>
 		@empty
-			<li>No Books yet in the list</li>
+			<tr>
+				<td>No Books yet in the list</td>
+			</tr>
 		@endforelse
-	</ul>
+		</tbody>
+	</table>
 @endsection
