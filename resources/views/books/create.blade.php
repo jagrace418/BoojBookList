@@ -1,24 +1,11 @@
 @extends('layouts.app')
 @section('content')
-	<a href="/books">Cancel</a>
-	<form method="POST" action="/books">
-		@csrf
-		<div>
-			<label for="title">
-				Title
-				<input type="text" class="input" name="title" placeholder="Title">
-			</label>
-		</div>
-
-		<div>
-			<label for="Author">
-				Author
-				<input type="text" class="input" name="author" placeholder="Author">
-			</label>
-		</div>
-
-		<div>
-			<button type="submit">Save</button>
-		</div>
-	</form>
+	<div class="w-full max-w-xs content-center mx-auto
+			bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+		<form method="POST" action="/books">
+			@include('books.form', [
+			'book' => new \App\Book(),
+			'buttonText' => 'Add Book'])
+		</form>
+	</div>
 @endsection
