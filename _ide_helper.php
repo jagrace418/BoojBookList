@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 6.9.0 on 2019-12-26 22:25:23.
+ * Generated for Laravel 6.9.0 on 2019-12-27 22:06:16.
  * This file should not be included in your code, only analyzed by your IDE!
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -14086,15 +14086,18 @@ namespace Facade\Ignition\Facades {
 		/**
 		 * @static
 		 */
-		public static function applicationPath ($applicationPath) {
-			/** @var \Facade\FlareClient\Flare $instance */
-			return $instance->applicationPath($applicationPath);
-		}
+		public static function applicationPath($applicationPath)
+        {
+                        /** @var \Facade\FlareClient\Flare $instance */
+                        return $instance->applicationPath($applicationPath);
+        }
 
-		/**
-		 * @static
-		 */
-		public static function report ($throwable, $callback = null) {
+        /**
+         *
+         *
+         * @static
+         */
+        public static function report ($throwable, $callback = null) {
 			/** @var \Facade\FlareClient\Flare $instance */
 			return $instance->report($throwable, $callback);
 		}
@@ -16901,185 +16904,145 @@ namespace {
 		public static function useWritePdo () {
 			/** @var \Illuminate\Database\Query\Builder $instance */
 			return $instance->useWritePdo();
-		}
+            }
+         
+            /**
+             * Clone the query without the given properties.
+             *
+             * @param array $properties
+             * @return static 
+             * @static 
+             */ 
+            public static function cloneWithout($properties)
+            {
+                                /** @var \Illuminate\Database\Query\Builder $instance */
+                                return $instance->cloneWithout($properties);
+            }
+         
+            /**
+             * Clone the query without the given bindings.
+             *
+             * @param array $except
+             * @return static 
+             * @static 
+             */ 
+            public static function cloneWithoutBindings($except)
+            {
+                                /** @var \Illuminate\Database\Query\Builder $instance */
+                                return $instance->cloneWithoutBindings($except);
+            }
+         
+            /**
+             * Dump the current SQL and bindings.
+             *
+             * @return \Illuminate\Database\Query\Builder 
+             * @static 
+             */ 
+            public static function dump()
+            {
+                                /** @var \Illuminate\Database\Query\Builder $instance */
+                                return $instance->dump();
+            }
+         
+            /**
+             * Die and dump the current SQL and bindings.
+             *
+             * @return void 
+             * @static 
+             */ 
+            public static function dd()
+            {
+                                /** @var \Illuminate\Database\Query\Builder $instance */
+                                $instance->dd();
+            }
+         
+            /**
+             * Register a custom macro.
+             *
+             * @param string $name
+             * @param object|callable $macro
+             * @return void 
+             * @static 
+             */ 
+            public static function macro($name, $macro)
+            {
+                                \Illuminate\Database\Query\Builder::macro($name, $macro);
+            }
+         
+            /**
+             * Mix another object into the class.
+             *
+             * @param object $mixin
+             * @param bool $replace
+             * @return void 
+             * @throws \ReflectionException
+             * @static 
+             */ 
+            public static function mixin($mixin, $replace = true)
+            {
+                                \Illuminate\Database\Query\Builder::mixin($mixin, $replace);
+            }
+         
+            /**
+             * Dynamically handle calls to the class.
+             *
+             * @param string $method
+             * @param array $parameters
+             * @return mixed 
+             * @throws \BadMethodCallException
+             * @static 
+             */ 
+            public static function macroCall($method, $parameters)
+            {
+                                /** @var \Illuminate\Database\Query\Builder $instance */
+                                return $instance->macroCall($method, $parameters);
+            }
+        }
 
-		/**
-		 * Clone the query without the given properties.
-		 *
-		 * @param array $properties
-		 *
-		 * @return static
-		 * @static
-		 */
-		public static function cloneWithout ($properties) {
-			/** @var \Illuminate\Database\Query\Builder $instance */
-			return $instance->cloneWithout($properties);
-		}
+    class Event extends \Illuminate\Support\Facades\Event {}
 
-		/**
-		 * Clone the query without the given bindings.
-		 *
-		 * @param array $except
-		 *
-		 * @return static
-		 * @static
-		 */
-		public static function cloneWithoutBindings ($except) {
-			/** @var \Illuminate\Database\Query\Builder $instance */
-			return $instance->cloneWithoutBindings($except);
-		}
+    class File extends \Illuminate\Support\Facades\File {}
 
-		/**
-		 * Dump the current SQL and bindings.
-		 * @return \Illuminate\Database\Query\Builder
-		 * @static
-		 */
-		public static function dump () {
-			/** @var \Illuminate\Database\Query\Builder $instance */
-			return $instance->dump();
-		}
+    class Gate extends \Illuminate\Support\Facades\Gate {}
 
-		/**
-		 * Die and dump the current SQL and bindings.
-		 * @return void
-		 * @static
-		 */
-		public static function dd () {
-			/** @var \Illuminate\Database\Query\Builder $instance */
-			$instance->dd();
-		}
+    class Hash extends \Illuminate\Support\Facades\Hash {}
 
-		/**
-		 * Register a custom macro.
-		 *
-		 * @param string          $name
-		 * @param object|callable $macro
-		 *
-		 * @return void
-		 * @static
-		 */
-		public static function macro ($name, $macro) {
-			\Illuminate\Database\Query\Builder::macro($name, $macro);
-		}
+    class Lang extends \Illuminate\Support\Facades\Lang {}
 
-		/**
-		 * Mix another object into the class.
-		 *
-		 * @param object $mixin
-		 * @param bool   $replace
-		 *
-		 * @return void
-		 * @throws \ReflectionException
-		 * @static
-		 */
-		public static function mixin ($mixin, $replace = true) {
-			\Illuminate\Database\Query\Builder::mixin($mixin, $replace);
-		}
+    class Log extends \Illuminate\Support\Facades\Log {}
 
-		/**
-		 * Dynamically handle calls to the class.
-		 *
-		 * @param string $method
-		 * @param array  $parameters
-		 *
-		 * @return mixed
-		 * @throws \BadMethodCallException
-		 * @static
-		 */
-		public static function macroCall ($method, $parameters) {
-			/** @var \Illuminate\Database\Query\Builder $instance */
-			return $instance->macroCall($method, $parameters);
-		}
-	}
+    class Mail extends \Illuminate\Support\Facades\Mail {}
 
-	class Event extends \Illuminate\Support\Facades\Event {
+    class Notification extends \Illuminate\Support\Facades\Notification {}
 
-	}
+    class Password extends \Illuminate\Support\Facades\Password {}
 
-	class File extends \Illuminate\Support\Facades\File {
+    class Queue extends \Illuminate\Support\Facades\Queue {}
 
-	}
+    class Redirect extends \Illuminate\Support\Facades\Redirect {}
 
-	class Gate extends \Illuminate\Support\Facades\Gate {
+    class Request extends \Illuminate\Support\Facades\Request {}
 
-	}
+    class Response extends \Illuminate\Support\Facades\Response {}
 
-	class Hash extends \Illuminate\Support\Facades\Hash {
+    class Route extends \Illuminate\Support\Facades\Route {}
 
-	}
+    class Schema extends \Illuminate\Support\Facades\Schema {}
 
-	class Lang extends \Illuminate\Support\Facades\Lang {
+    class Session extends \Illuminate\Support\Facades\Session {}
 
-	}
+    class Storage extends \Illuminate\Support\Facades\Storage {}
 
-	class Log extends \Illuminate\Support\Facades\Log {
+    class Str extends \Illuminate\Support\Str {}
 
-	}
+    class URL extends \Illuminate\Support\Facades\URL {}
 
-	class Mail extends \Illuminate\Support\Facades\Mail {
+    class Validator extends \Illuminate\Support\Facades\Validator {}
 
-	}
+    class View extends \Illuminate\Support\Facades\View {}
 
-	class Notification extends \Illuminate\Support\Facades\Notification {
-
-	}
-
-	class Password extends \Illuminate\Support\Facades\Password {
-
-	}
-
-	class Queue extends \Illuminate\Support\Facades\Queue {
-
-	}
-
-	class Redirect extends \Illuminate\Support\Facades\Redirect {
-
-	}
-
-	class Request extends \Illuminate\Support\Facades\Request {
-
-	}
-
-	class Response extends \Illuminate\Support\Facades\Response {
-
-	}
-
-	class Route extends \Illuminate\Support\Facades\Route {
-
-	}
-
-	class Schema extends \Illuminate\Support\Facades\Schema {
-
-	}
-
-	class Session extends \Illuminate\Support\Facades\Session {
-
-	}
-
-	class Storage extends \Illuminate\Support\Facades\Storage {
-
-	}
-
-	class Str extends \Illuminate\Support\Str {
-
-	}
-
-	class URL extends \Illuminate\Support\Facades\URL {
-
-	}
-
-	class Validator extends \Illuminate\Support\Facades\Validator {
-
-	}
-
-	class View extends \Illuminate\Support\Facades\View {
-
-	}
-
-	class Flare extends \Facade\Ignition\Facades\Flare {
-
-	}
-
+    class Flare extends \Facade\Ignition\Facades\Flare {}
+ 
 }
 
 

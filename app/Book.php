@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string                          $title
  * @property string                          $author
  * @property int                             $ranking
+ * @property string                          $description
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Book newModelQuery()
@@ -22,6 +23,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Book whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Book whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Book whereRanking($value)
  */
 class Book extends Model {
 

@@ -32,6 +32,7 @@ class BookAPIController extends Controller {
 		$book->title = $request->input('title') ?? $book->title;
 		$book->author = $request->input('author') ?? $book->author;
 		$book->ranking = $request->input('ranking') ?? $book->ranking;
+		$book->description = $request->input('description') ?? $book->description;
 
 		if ($book->save()) {
 			return response()->json(BookResource::make($book), 200);

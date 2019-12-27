@@ -16,9 +16,17 @@
 </div>
 
 <div>
-	<button type="submit" class="bg-blue-500 rounded-full py-2 px-4 text-white mt-5">Save</button>
+	<label for="Description">
+		Description
+		<textarea name="description" placeholder="Describe the book" value="{{$book->description}}"
+				  class="input shadow appearance-none border rounded w-full py-2 text-default leading-tight focus:outline-none focus:shadow-outline"></textarea>
+	</label>
+</div>
+
+<div class="mt-5">
+	<button type="submit" class="bg-blue-500 rounded-full py-2 px-4 text-white shadow">Save</button>
 	<button>
-		<a href="/books" class="bg-blue-500 rounded-full py-2 px-4 text-white mt-5">Cancel</a>
+		<a href="/books" class="bg-blue-500 rounded-full py-2 px-4 text-white shadow">Cancel</a>
 	</button>
 </div>
 

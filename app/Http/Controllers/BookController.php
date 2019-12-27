@@ -67,9 +67,10 @@ class BookController extends Controller {
 
 	protected function validateRequest () {
 		return request()->validate([
-			'title'   => 'required|max:255',
-			'author'  => 'required|max:255',
-			'ranking' => 'nullable'
+			'title'       => 'required|max:255',
+			'author'      => 'required|max:255',
+			'description' => 'nullable',
+			'ranking'     => 'nullable'
 		]);
 	}
 }

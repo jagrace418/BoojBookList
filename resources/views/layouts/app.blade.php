@@ -15,7 +15,7 @@
 		</div>
 	</div>
 </header>
-<main class="ml-4">
+<main class="ml-4 mt-6">
 	@yield('content')
 </main>
 </body>

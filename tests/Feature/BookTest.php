@@ -75,6 +75,12 @@ class BookTest extends TestCase {
 			->assertSessionHasNoErrors();
 	}
 
+	public function testBookNotRequiresDescription () {
+		$attributes = factory('App\Book')->raw(['description' => '']);
+		$this->post('/books', $attributes)
+			->assertSessionHasNoErrors();
+	}
+
 	public function testViewBook () {
 		$this->withoutExceptionHandling();
 		$book = factory('App\Book')->create();
