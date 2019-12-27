@@ -13,6 +13,28 @@ class BookController extends Controller {
 		return view('books.index', compact('books'));
 	}
 
+	public function sort ($column, $order = null) {
+		$books = Book::all();
+		$sortCols = [
+			'title',
+			'author',
+		];
+		$directions = [
+			'asc',
+			'desc',
+		];
+		$direction = 'desc';
+		if (in_array($order, $directions)) {
+			$direction = $order;
+		}
+
+		if (in_array($column, $sortCols)) {
+			$books = Book::orderBy($column, $direction)->get();
+		}
+
+		return view('books.index', compact('books'));
+	}
+
 	public function store () {
 		$attributes = request()->validate([
 			'title'  => 'required',

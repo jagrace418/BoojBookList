@@ -3,28 +3,20 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
+	<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/10f5e1780c.js" crossorigin="anonymous"></script>
 	<title>Booj Reading List</title>
 </head>
 <body>
-<div class="flex-center position-ref full-height">
-	@if (Route::has('login'))
-		<div class="top-right links">
-			@auth
-				<a href="{{ url('/home') }}">Home</a>
-			@else
-				<a href="{{ route('login') }}">Login</a>
-
-				@if (Route::has('register'))
-					<a href="{{ route('register') }}">Register</a>
-				@endif
-			@endauth
+<header class="bg-red-500 p-10">
+	<div class="flex flex-col">
+		<div class="text-center text-4xl">
+			Booj Reading List
 		</div>
-	@endif
-
-	<div class="content">
-		@yield('content')
 	</div>
-</div>
+</header>
+<main class="ml-4">
+	@yield('content')
+</main>
 </body>
 </html>

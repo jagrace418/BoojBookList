@@ -1,14 +1,25 @@
 @extends('layouts.app')
 @section('content')
-	<a href="/books">Home</a>
-	<a href="{{$book->path() . '/edit'}}">Edit</a>
-	<h3>{{$book->title}}</h3>
-	<h5>{{$book->author}}</h5>
-	<footer>
-		<form method="POST" action="{{$book->path()}}" class="text-right">
+	<div class="mt-5 flex">
+		<button class="bg-blue-500 rounded-full py-2 px-4 text-white mr-2">
+			<a href="/books">Home</a>
+		</button>
+		<button class="bg-blue-500 rounded-full py-2 px-4 text-white mr-2">
+			<a href="{{$book->path() . '/edit'}}">Edit</a>
+		</button>
+		<form method="POST" action="{{$book->path()}}">
 			@method('DELETE')
 			@csrf
-			<button type="submit">Delete</button>
+			<button class="bg-blue-500 rounded-full py-2 px-4 text-white" type="submit">Delete</button>
 		</form>
-	</footer>
+	</div>
+
+	<div class="flex justify-around">
+		<div class="flex-col text-center rounded bg-gray-300 w-1/3 py-10">
+			<div class="text-xl">{{$book->title}}</div>
+			<div class="text-xl">{{$book->author}}</div>
+		</div>
+	</div>
+
+
 @endsection

@@ -11,11 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-	return view('welcome');
-});
-
 Route::resource('books', 'BookController');
+
+Route::get('/books/sort/{column}/{order?}', 'BookController@sort');
 
 Route::get('/books/{book}/edit', 'BookController@edit');
 
