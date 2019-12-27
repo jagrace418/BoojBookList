@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::resource('books', 'BookController');
 
 Route::get('/books/{book}/edit', 'BookController@edit');
+
+Route::apiResource('api/books', 'BookAPIController');

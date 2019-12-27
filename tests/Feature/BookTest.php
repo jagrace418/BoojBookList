@@ -35,7 +35,7 @@ class BookTest extends TestCase {
 		$this->withoutExceptionHandling();
 		$book = factory('App\Book')->create();
 
-		$this->delete($book->path())->assertStatus(204);
+		$this->delete($book->path());
 		$this->assertDatabaseMissing('books', [
 				'title'  => $book->title,
 				'author' => $book->author]
