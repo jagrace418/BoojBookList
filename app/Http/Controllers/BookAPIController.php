@@ -16,8 +16,9 @@ class BookAPIController extends Controller {
 
 	public function store (Request $request) {
 		$book = Book::create([
-			'title'  => $request->title,
-			'author' => $request->author,
+			'title'   => $request->title,
+			'author'  => $request->author,
+			'ranking' => $request->ranking,
 		]);
 
 		return response()->json(BookResource::make($book), 201);
@@ -30,6 +31,7 @@ class BookAPIController extends Controller {
 	public function update (Request $request, Book $book) {
 		$book->title = $request->input('title') ?? $book->title;
 		$book->author = $request->input('author') ?? $book->author;
+		$book->ranking = $request->input('ranking') ?? $book->ranking;
 
 		if ($book->save()) {
 			return response()->json(BookResource::make($book), 200);

@@ -9,6 +9,5 @@ $factory->define(Book::class, function (Faker $faker) {
 	return [
 		'title'   => $faker->sentence(3),
 		'author'  => $faker->name,
-		'ranking' => $faker->numberBetween(0, 10)
 	];
 });

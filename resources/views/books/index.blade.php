@@ -1,9 +1,16 @@
 @extends('layouts.app')
 @section('content')
+	<script
+			src="https://code.jquery.com/jquery-3.4.1.min.js"
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+	<script src="/js/sortingTable.js"></script>
 
 	<button class="bg-blue-500 rounded-full py-2 px-4 text-white mt-5">
 		<a href="/books/create">Add to List</a>
 	</button>
+
 	<table class="table-auto min-w-full">
 		<thead>
 		<tr>
@@ -23,6 +30,7 @@
 						@endif
 				>
 					Ranking
+				</a>
 			</th>
 
 			<th class="text-xl text-left">
@@ -63,17 +71,17 @@
 			</th>
 		</tr>
 		</thead>
-		<tbody>
+		<tbody id="sortableTable">
 		<?php $i = 0; ?>
 		@forelse($books as $book)
-			<tr>
-				<td class="<?= $i % 2 == 0 ? 'bg-gray-300' : 'bg-white'?>">
+			<tr data-id="{{$book->id}}">
+				<td class="border-4" style="border-left: #636b6f; border-right: #636b6f">
 					{{$book->ranking}}
 				</td>
-				<td class="<?= $i % 2 == 0 ? 'bg-gray-300' : 'bg-white'?>">
+				<td class="border-4" style="border-left: #636b6f; border-right: #636b6f">
 					<a href="{{$book->path()}}">{{$book->title}}</a>
 				</td>
-				<td class="<?= $i++ % 2 == 0 ? 'bg-gray-300' : 'bg-white'?>">
+				<td class="border-4" style="border-left: #636b6f; border-right: #636b6f">
 					{{$book->author}}
 				</td>
 			</tr>
