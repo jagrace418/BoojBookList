@@ -15,59 +15,65 @@
 		<thead>
 		<tr>
 			<th class="text-xl text-left">
-				@if(Route::current()->parameter('column') === 'ranking' && Route::current()->parameter('order') === 'desc')
-					<i class="fas fa-arrow-up"></i>
-				@elseif(Route::current()->parameter('column') === 'ranking')
-					<i class="fas fa-arrow-down"></i>
-				@endif
-				<a
-						@if(Route::current()->parameter('order') === null)
-						href="/books/sort/ranking/desc"
-						@elseif(Route::current()->parameter('order') === 'asc')
-						href="/books/sort/ranking/desc"
-						@else
-						href="/books/sort/ranking/asc"
-						@endif
-				>
-					Ranking
-				</a>
+				<div class="flex justify-between items-center">
+					<a
+							@if(Route::current()->parameter('order') === null)
+							href="/books/sort/ranking/desc"
+							@elseif(Route::current()->parameter('order') === 'asc')
+							href="/books/sort/ranking/desc"
+							@else
+							href="/books/sort/ranking/asc"
+							@endif
+					>
+						Ranking
+					</a>
+					@if(Route::current()->parameter('column') === 'ranking' && Route::current()->parameter('order') === 'desc')
+						<i class="fas fa-arrow-up"></i>
+					@elseif(Route::current()->parameter('column') === 'ranking')
+						<i class="fas fa-arrow-down"></i>
+					@endif
+				</div>
 			</th>
 
 			<th class="text-xl text-left">
-				@if(Route::current()->parameter('column') === 'title' && Route::current()->parameter('order') === 'desc')
-					<i class="fas fa-arrow-up"></i>
-				@elseif(Route::current()->parameter('column') === 'title')
-					<i class="fas fa-arrow-down"></i>
-				@endif
-				<a
-						@if(Route::current()->parameter('order') === null)
-						href="/books/sort/title/desc"
-						@elseif(Route::current()->parameter('order') === 'asc')
-						href="/books/sort/title/desc"
-						@else
-						href="/books/sort/title/asc"
-						@endif
-				>
-					Title
-				</a>
+				<div class="flex justify-between items-center">
+					<a
+							@if(Route::current()->parameter('order') === null)
+							href="/books/sort/title/desc"
+							@elseif(Route::current()->parameter('order') === 'asc')
+							href="/books/sort/title/desc"
+							@else
+							href="/books/sort/title/asc"
+							@endif
+					>
+						Title
+					</a>
+					@if(Route::current()->parameter('column') === 'title' && Route::current()->parameter('order') === 'desc')
+						<i class="fas fa-arrow-up"></i>
+					@elseif(Route::current()->parameter('column') === 'title')
+						<i class="fas fa-arrow-down"></i>
+					@endif
+				</div>
 			</th>
 			<th class="text-xl text-left">
-				@if(Route::current()->parameter('column') === 'author' && Route::current()->parameter('order') === 'desc')
-					<i class="fas fa-arrow-up"></i>
-				@elseif(Route::current()->parameter('column') === 'author')
-					<i class="fas fa-arrow-down"></i>
-				@endif
-				<a
-						@if(Route::current()->parameter('order') === null)
-						href="/books/sort/author/desc"
-						@elseif(Route::current()->parameter('order') === 'asc')
-						href="/books/sort/author/desc"
-						@else
-						href="/books/sort/author/asc"
-						@endif
-				>
-					Author
-				</a>
+				<div class="flex justify-between items-center">
+					<a
+							@if(Route::current()->parameter('order') === null)
+							href="/books/sort/author/desc"
+							@elseif(Route::current()->parameter('order') === 'asc')
+							href="/books/sort/author/desc"
+							@else
+							href="/books/sort/author/asc"
+							@endif
+					>
+						Author
+					</a>
+					@if(Route::current()->parameter('column') === 'author' && Route::current()->parameter('order') === 'desc')
+						<i class="fas fa-arrow-up"></i>
+					@elseif(Route::current()->parameter('column') === 'author')
+						<i class="fas fa-arrow-down"></i>
+					@endif
+				</div>
 			</th>
 		</tr>
 		</thead>

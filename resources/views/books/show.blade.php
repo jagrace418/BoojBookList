@@ -15,9 +15,19 @@
 	</div>
 
 	<div class="flex justify-around">
-		<div class="flex-col text-center rounded bg-gray-300 w-1/3 py-10">
-			<div class="text-xl">{{$book->title}}</div>
-			<div class="text-xl">{{$book->author}}</div>
+		<div class="flex-col text-center rounded bg-gray-300 shadow w-1/3 py-10">
+			<div>
+				Title:
+				<div class="text-xl">{{$book->title}}</div>
+			</div>
+			<div>
+				Author:
+				<div class="text-xl">{{$book->author}}</div>
+			</div>
+			<div>
+				Rating:
+				<div class="text-xl">{{$book->ranking}}</div>
+			</div>
 		</div>
 	</div>
 
