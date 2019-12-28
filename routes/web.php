@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('/', 'BookController@index');
+
 Route::resource('books', 'BookController');
 
 Route::get('/books/sort/{column}/{order?}', 'BookController@sort');
