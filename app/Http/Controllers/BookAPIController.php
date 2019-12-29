@@ -71,6 +71,13 @@ class BookAPIController extends Controller {
 	public function destroy (Book $book) {
 		$book->delete();
 
+		$books = Book::get()->sortBy('ranking');
+		$i = 0;
+		foreach ($books as $book) {
+			$book->ranking = ++$i;
+			$book->save();
+		}
+
 		return response()->json(null, 204);
 	}
 }
