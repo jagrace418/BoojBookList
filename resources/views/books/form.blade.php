@@ -24,9 +24,9 @@
 </div>
 
 <div class="mt-5">
-	<button type="submit" class="bg-blue-500 rounded-full py-2 px-4 text-white shadow">Save</button>
-	<button>
-		<a href="/books" class="bg-blue-500 rounded-full py-2 px-4 text-white shadow">Cancel</a>
+	<button type="submit" class="btn">Save</button>
+	<button class="btn">
+		<a href="/books">Cancel</a>
 	</button>
 </div>
 

@@ -7,15 +7,15 @@
 	<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
 	<script src="/js/sortingTable.js"></script>
 
-	<button class="bg-blue-500 rounded-full py-2 px-4 text-white mt-5 shadow">
+	<button class="btn">
 		<a href="/books/create">Add to List</a>
 	</button>
 
-	<table class="table-auto min-w-full">
+	<table class="table-auto min-w-full bg-pink-100">
 		<thead>
 		<tr>
 			<th class="text-xl text-left">
-				<div class="flex justify-between items-center">
+				<div class="flex items-center">
 					<a
 							@if(Route::current()->parameter('order') === null)
 							href="/books/sort/ranking/desc"
@@ -36,7 +36,7 @@
 			</th>
 
 			<th class="text-xl text-left">
-				<div class="flex justify-between items-center">
+				<div class="flex items-center">
 					<a
 							@if(Route::current()->parameter('order') === null)
 							href="/books/sort/title/desc"
@@ -56,7 +56,7 @@
 				</div>
 			</th>
 			<th class="text-xl text-left">
-				<div class="flex justify-between items-center">
+				<div class="flex items-center">
 					<a
 							@if(Route::current()->parameter('order') === null)
 							href="/books/sort/author/desc"
@@ -81,14 +81,14 @@
 		<?php $i = 0; ?>
 		@forelse($books as $book)
 			<tr data-id="{{$book->id}}">
-				<td class="border-4" style="border-left: #636b6f; border-right: #636b6f">
-					{{$book->ranking}}
+				<td class="border-2" style="border-left: #ffffff; border-right: #ffffff">
+					<a style="display: block" href="{{$book->path()}}">{{$book->ranking}}</a>
 				</td>
-				<td class="border-4" style="border-left: #636b6f; border-right: #636b6f">
-					<a href="{{$book->path()}}">{{$book->title}}</a>
+				<td class="border-2" style="border-left: #ffffff; border-right: #ffffff">
+					<a style="display: block" href="{{$book->path()}}">{{$book->title}}</a>
 				</td>
-				<td class="border-4" style="border-left: #636b6f; border-right: #636b6f">
-					{{$book->author}}
+				<td class="border-2" style="border-left: #ffffff; border-right: #ffffff">
+					<a style="display: block" href="{{$book->path()}}">{{$book->author}}</a>
 				</td>
 			</tr>
 		@empty
