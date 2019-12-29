@@ -4,7 +4,7 @@
 
 		<a href="/books" class="btn">Home</a>
 
-		<a class="btn" href="{{$book->path() . '/edit'}}">Edit</a>
+		<a class="btn" href="{{$book->path()}}/edit">Edit</a>
 
 		<a class="btn" href="{{$book->path()}}/delete">Delete</a>
 	</div>
@@ -23,14 +23,14 @@
 				Rating:
 				<div class="text-gray-800 w-1/3">{{$book->ranking}}</div>
 			</div>
-			<div class="flex justify-center">
-				<div class="text-xl">
+			<div class="flex ml-4 mt-4">
+				<div class="text-xl mr-14">
 					Description:
 				</div>
 				@if($book->description === null)
-					<div class="text-l text-gray-800 w-1/3">No Description yet</div>
+					<div class="text-l text-gray-800">No Description yet</div>
 				@else
-					<div class="text-l w-1/3 mt-1">{{$book->description}}</div>
+					<div class="text-l">{{$book->description}}</div>
 				@endif
 
 			</div>

@@ -8,7 +8,7 @@
 		<form class="btn" method="POST" action="{{$book->path()}}">
 			@method('DELETE')
 			@csrf
-			<button type="submit">Yes Delete</button>
+			<button type="submit">Delete</button>
 		</form>
 	</div>
 @endsection

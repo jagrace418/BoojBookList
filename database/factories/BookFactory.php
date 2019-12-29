@@ -9,6 +9,6 @@ $factory->define(Book::class, function (Faker $faker) {
 	return [
 		'title'       => $faker->sentence(3),
 		'author'      => $faker->name,
-		'description' => $faker->sentence(10),
+		'description' => $faker->sentence(30),
 	];
 });
