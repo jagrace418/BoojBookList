@@ -28,9 +28,9 @@
 					Description:
 				</div>
 				@if($book->description === null)
-					<div class="text-l text-gray-800">No Description yet</div>
+					<div class="text-l text-gray-800 mt-1">No Description yet</div>
 				@else
-					<div class="text-l">{{$book->description}}</div>
+					<div class="text-l mt-1">{{$book->description}}</div>
 				@endif
 
 			</div>
