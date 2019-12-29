@@ -19,4 +19,6 @@ Route::get('/books/sort/{column}/{order?}', 'BookController@sort');
 
 Route::get('/books/{book}/edit', 'BookController@edit');
 
+Route::get('/books/{book}/delete', 'BookController@confirmDelete');
+
 Route::apiResource('api/books', 'BookAPIController');

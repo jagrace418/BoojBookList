@@ -15,7 +15,7 @@ class BookController extends Controller {
 	 * @return Factory|View
 	 */
 	public function index () {
-		$books = Book::all();
+		$books = Book::all()->sortBy('ranking');
 
 		return view('books.index', compact('books'));
 	}
@@ -83,7 +83,18 @@ class BookController extends Controller {
 	public function destroy (Book $book) {
 		$book->delete();
 
+		$books = Book::get()->sortBy('ranking');
+		$i = 0;
+		foreach ($books as $book) {
+			$book->ranking = ++$i;
+			$book->save();
+		}
+
 		return redirect('/books');
+	}
+
+	public function confirmDelete (Book $book) {
+		return view('books.delete', compact('book'));
 	}
 
 	/**

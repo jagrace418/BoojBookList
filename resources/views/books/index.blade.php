@@ -7,9 +7,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
 	<script src="/js/sortingTable.js"></script>
 
-	<button class="btn">
-		<a href="/books/create">Add to List</a>
-	</button>
+	<a class="btn" href="/books/create">Add to List</a>
 
 	<table class="table-auto min-w-full bg-pink-100">
 		<thead>

@@ -1,17 +1,12 @@
 @extends('layouts.app')
 @section('content')
 	<div class="mt-5 flex">
-		<button class="btn">
-			<a href="/books">Home</a>
-		</button>
-		<button class="btn">
-			<a href="{{$book->path() . '/edit'}}">Edit</a>
-		</button>
-		<form class="btn" method="POST" action="{{$book->path()}}">
-			@method('DELETE')
-			@csrf
-			<button type="submit">Delete</button>
-		</form>
+
+		<a href="/books" class="btn">Home</a>
+
+		<a class="btn" href="{{$book->path() . '/edit'}}">Edit</a>
+
+		<a class="btn" href="{{$book->path()}}/delete">Delete</a>
 	</div>
 
 	<div class="flex justify-around">
@@ -29,11 +24,13 @@
 				<div class="text-gray-800 w-1/3">{{$book->ranking}}</div>
 			</div>
 			<div class="flex justify-center">
-				Description:
+				<div class="text-xl">
+					Description:
+				</div>
 				@if($book->description === null)
 					<div class="text-l text-gray-800 w-1/3">No Description yet</div>
 				@else
-					<div class="text-l w-1/3">{{$book->description}}</div>
+					<div class="text-l w-1/3 mt-1">{{$book->description}}</div>
 				@endif
 
 			</div>
