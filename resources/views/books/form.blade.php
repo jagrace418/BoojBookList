@@ -1,28 +1,28 @@
 @csrf
 <div>
-	<label for="title">
+	<label for="title" class="text-xl">
 		Title
-		<input type="text" name="title" placeholder="Title" value="{{$book->title}}"
-			   class="input shadow appearance-none border rounded w-full py-2 text-default leading-tight focus:outline-none focus:shadow-outline">
 	</label>
+	<input type="text" name="title" placeholder="Title" value="{{$book->title}}"
+		   class="input shadow appearance-none border rounded w-full py-2 text-default leading-tight focus:outline-none focus:shadow-outline">
 </div>
 
 <div>
-	<label for="Author">
+	<label for="Author" class="text-xl">
 		Author
-		<input type="text" name="author" placeholder="Author" value="{{$book->author}}"
-			   class="input shadow appearance-none border rounded w-full py-2 text-default leading-tight focus:outline-none focus:shadow-outline">
 	</label>
+	<input type="text" name="author" placeholder="Author" value="{{$book->author}}"
+		   class="input shadow appearance-none border rounded w-full py-2 text-default leading-tight focus:outline-none focus:shadow-outline">
 </div>
 
 <div>
-	<label for="Description">
+	<label for="Description" class="text-xl">
 		Description
-		<textarea name="description" placeholder="Describe the book" style="min-height: 200px"
-				  class="input shadow appearance-none border rounded w-full py-2 text-default leading-tight focus:outline-none focus:shadow-outline">
-			{{$book->description}}
-		</textarea>
 	</label>
+	<textarea name="description" placeholder="Describe the book" style="min-height: 200px"
+			  class="input shadow appearance-none border rounded w-full py-2 text-default leading-tight focus:outline-none focus:shadow-outline"
+	>{{$book->description}}
+		</textarea>
 </div>
 
 <div class="mt-5">
