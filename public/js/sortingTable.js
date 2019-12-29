@@ -1,6 +1,7 @@
 $(document).ready(function () {
     let table = document.getElementById('sortableTable');
     let sortable = Sortable.create(table, {
+        delayOnTouchOnly: true,
         onEnd: function (/**Event*/evt) {
             $.ajax({
                 url: "/api/books/" + evt.item.getAttribute('data-id'),
