@@ -9,7 +9,7 @@
 
 	<a class="btn" href="/books/create">Add to List</a>
 
-	<table class="table-auto min-w-full bg-pink-100 mt-4">
+	<table class="table-auto min-w-full bg-pink-100 mt-4 px-2 py-2">
 		<thead>
 		<tr>
 			<th class="text-xl text-left">
