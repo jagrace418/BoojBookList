@@ -6,6 +6,7 @@
 			crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
 	<script src="/js/sortingTable.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 	<a class="btn" href="/books/create">Add to List</a>
 
@@ -96,7 +97,7 @@
 		@endforelse
 		</tbody>
 	</table>
-	<div class="flex">
+	<div>
 		{{$books->links()}}
 	</div>
 @endsection
