@@ -14,3 +14,6 @@ Here is the Postman collection to my [API](https://www.getpostman.com/collection
 
 ##### Library used for drag and drop sorting
 https://github.com/SortableJS/Sortable
+
+##### Side note
+I'm not entirely satisfied by the way drag and drop sorting works along side the paginator table. Currently, if you sort the table by a table column like Author and then drag and drop an item it will reorder the entire list based on that.. but I wanted to use a paginator to prevent the page from being 100s of entries long.
