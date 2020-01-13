@@ -43,7 +43,7 @@ class BookController extends Controller {
 		}
 
 		if (in_array($column, $sortCols)) {
-			$books = Book::orderBy($column, $direction)->paginate(25)->get();
+			$books = Book::orderBy($column, $direction)->paginate(25);
 		}
 
 		return view('books.index', compact('books'));
