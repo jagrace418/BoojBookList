@@ -97,7 +97,7 @@
 		@endforelse
 		</tbody>
 	</table>
-	<div>
+	<div class="pt-3">
 		{{$books->links()}}
 	</div>
 @endsection
