@@ -96,7 +96,7 @@
 		@endforelse
 		</tbody>
 	</table>
-	<div>
+	<div class="flex">
 		{{$books->links()}}
 	</div>
 @endsection

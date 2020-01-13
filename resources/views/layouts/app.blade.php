@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+	<link rel="icon" href="{{asset('favicon.ico')}}">
 	<script src="https://kit.fontawesome.com/10f5e1780c.js" crossorigin="anonymous"></script>
 	<title>Reading List</title>
 </head>
