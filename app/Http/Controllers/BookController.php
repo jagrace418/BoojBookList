@@ -15,7 +15,7 @@ class BookController extends Controller {
 	 * @return Factory|View
 	 */
 	public function index () {
-		$books = Book::all()->sortBy('ranking');
+		$books = Book::orderBy('ranking')->paginate(20);
 
 		return view('books.index', compact('books'));
 	}
